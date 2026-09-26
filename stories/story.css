@@ -24,3 +24,26 @@ body{counter-reset:chapter}.top{position:sticky;top:0;z-index:10;background:#111
 .document-links{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.7rem}.document-links a{display:inline-block;color:#f46d22;border-bottom:1px solid currentColor;padding-bottom:.35rem;font-size:.82rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}.document-links a:hover{color:#ffab70}
 .story-figure{margin:2.2rem 0}.story-figure img{display:block;width:100%;height:auto;border:1px solid #ffffff45}.story-figure figcaption{color:#bdb5ac;font-size:.82rem;line-height:1.5;margin-top:.7rem}
 .text-evidence-link{color:#f46d22;border-bottom:1px solid currentColor;padding-bottom:.35rem;font-size:.86rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.text-evidence-link:hover{color:#ffab70}
+/* Consistent chapter and evidence image layout for every story page. */
+.chapter,.chapter:nth-of-type(even){grid-template-columns:minmax(0,41%) minmax(0,1fr);gap:clamp(2.5rem,5vw,6rem)}
+.chapter:nth-of-type(even){grid-template-columns:minmax(0,1fr) minmax(0,41%)}
+.chapter h2{min-width:0;max-width:100%;font-size:clamp(2.8rem,4.4vw,5.45rem);overflow-wrap:normal;hyphens:none}
+.chapter>div{min-width:0}.chapter p{overflow-wrap:break-word}
+.story-figure{width:100%;max-width:100%;margin:2.25rem 0 2.5rem;padding:0;background:#202020;border:1px solid #ffffff30;box-shadow:0 18px 42px #0004}
+.story-figure img{display:block;width:100%;height:auto;border:0;object-fit:contain;background:#202020}
+.story-figure figcaption{margin:0;padding:.9rem 1rem 1rem;border-top:1px solid #ffffff30;color:#d2cbc3;font-size:.82rem;line-height:1.45}
+@media(max-width:980px){.chapter,.chapter:nth-of-type(even){display:block;min-height:0;padding:5rem 0}.chapter h2,.chapter:nth-of-type(even) h2{position:relative;top:auto;max-width:850px;margin:0 0 2rem;font-size:clamp(2.8rem,8vw,5rem)}.chapter>div,.chapter:nth-of-type(even)>div{padding-left:clamp(1.25rem,3vw,2rem)}.story-figure{margin:1.8rem 0 2rem}}
+@media(max-width:600px){.chapter,.chapter:nth-of-type(even){padding:4rem 0}.chapter h2,.chapter:nth-of-type(even) h2{font-size:clamp(2.6rem,10vw,4rem)}.story-figure figcaption{font-size:.77rem}}
+/* Images belong to the chapter title column; narrative stays opposite. */
+.chapter.chapter-with-media,.chapter.chapter-with-media:nth-of-type(even){display:grid;grid-template-columns:minmax(0,41%) minmax(0,1fr);gap:clamp(2.5rem,5vw,6rem);align-items:start}
+.chapter.chapter-with-media:nth-of-type(even){grid-template-columns:minmax(0,1fr) minmax(0,41%)}
+.chapter.chapter-with-media>.chapter-visual{grid-column:1;grid-row:1;min-width:0;padding:0;border:0;position:sticky;top:125px}
+.chapter.chapter-with-media>.chapter-copy{grid-column:2;grid-row:1;min-width:0;align-self:start;padding-left:clamp(1.4rem,3vw,3.5rem);border-left:2px solid #f46d22}
+.chapter.chapter-with-media:nth-of-type(even)>.chapter-visual{grid-column:2;grid-row:1}
+.chapter.chapter-with-media:nth-of-type(even)>.chapter-copy{grid-column:1;grid-row:1}
+.chapter.chapter-with-media h2{position:relative;top:auto;margin:0 0 2rem}
+.chapter.chapter-with-media .story-figure{margin:0}.chapter.chapter-with-media .story-figure img{width:100%;height:auto}
+.motion .chapter.chapter-with-media .chapter-visual,.motion .chapter.chapter-with-media .chapter-copy{opacity:.42;transform:translateY(24px);transition:opacity .8s,transform .8s}
+.motion .chapter.chapter-with-media.is-active .chapter-visual,.motion .chapter.chapter-with-media.is-active .chapter-copy{opacity:1;transform:none}
+@media(max-width:980px){.chapter.chapter-with-media,.chapter.chapter-with-media:nth-of-type(even){display:block}.chapter.chapter-with-media>.chapter-visual,.chapter.chapter-with-media:nth-of-type(even)>.chapter-visual{position:relative;top:auto;margin-bottom:2rem}.chapter.chapter-with-media>.chapter-copy,.chapter.chapter-with-media:nth-of-type(even)>.chapter-copy{padding-left:clamp(1.25rem,3vw,2rem)}.chapter.chapter-with-media h2{margin-bottom:1.5rem}.motion .chapter.chapter-with-media .chapter-visual,.motion .chapter.chapter-with-media .chapter-copy{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.motion .chapter.chapter-with-media .chapter-visual,.motion .chapter.chapter-with-media .chapter-copy{opacity:1;transform:none}}
