@@ -1,15 +1,13 @@
 JULIE MARLINA HASAN — COMPLETE PORTFOLIO
 
-START HERE: Open index.html. Use the Sharing section to open Video Kreatif AI.
+Open index.html, then choose a story under Sharing or Selected Work. Keep the folder structure intact.
 
-VIDEO KREATIF AI IS INCLUDED AND WIRED INTO THE PORTFOLIO:
-- index.html → Sharing → Video Kreatif AI → stories/video-kreatif-ai.html
-- The story page links to its appointment and appreciation PDFs in evidence/.
-- The story page also links to the storyboard, Padlet, video outcomes and gallery supplied by Julie.
+UPDATED INTERNATIONAL SHARING STORY
+index.html → Sharing → Innovative learning models → stories/uin-sharing.html
+The story includes the presentation cover and links to evidence/uin-seminar-invitation-julie.pdf, evidence/uin-seminar-speaker-certificate-julie.pdf and evidence/uin-pbl-pjbl-presentation-julie.pdf. It also links to the supplied Facebook post.
 
-FOLDERS:
-- stories/ : Smart MUET, Smart DT, CAMP21, UIN sharing and Video Kreatif AI story pages
-- folio/   : DH13 folio and its separate category pages
-- evidence/: Video Kreatif AI appointment and appreciation PDFs
+VIDEO KREATIF AI
+index.html → Sharing → Video Kreatif AI → stories/video-kreatif-ai.html
+Its May appointment and appreciation PDFs remain under evidence/.
 
-Keep the folder structure intact when opening locally or uploading to static hosting.
+The folio/ directory contains separate DH13 category pages. CSS and JavaScript are included.
