@@ -34,16 +34,39 @@ body{counter-reset:chapter}.top{position:sticky;top:0;z-index:10;background:#111
 .story-figure figcaption{margin:0;padding:.9rem 1rem 1rem;border-top:1px solid #ffffff30;color:#d2cbc3;font-size:.82rem;line-height:1.45}
 @media(max-width:980px){.chapter,.chapter:nth-of-type(even){display:block;min-height:0;padding:5rem 0}.chapter h2,.chapter:nth-of-type(even) h2{position:relative;top:auto;max-width:850px;margin:0 0 2rem;font-size:clamp(2.8rem,8vw,5rem)}.chapter>div,.chapter:nth-of-type(even)>div{padding-left:clamp(1.25rem,3vw,2rem)}.story-figure{margin:1.8rem 0 2rem}}
 @media(max-width:600px){.chapter,.chapter:nth-of-type(even){padding:4rem 0}.chapter h2,.chapter:nth-of-type(even) h2{font-size:clamp(2.6rem,10vw,4rem)}.story-figure figcaption{font-size:.77rem}}
-/* Images belong to the chapter title column; narrative stays opposite. */
-.chapter.chapter-with-media,.chapter.chapter-with-media:nth-of-type(even){display:grid;grid-template-columns:minmax(0,41%) minmax(0,1fr);gap:clamp(2.5rem,5vw,6rem);align-items:start}
-.chapter.chapter-with-media:nth-of-type(even){grid-template-columns:minmax(0,1fr) minmax(0,41%)}
-.chapter.chapter-with-media>.chapter-visual{grid-column:1;grid-row:1;min-width:0;padding:0;border:0;position:sticky;top:125px}
-.chapter.chapter-with-media>.chapter-copy{grid-column:2;grid-row:1;min-width:0;align-self:start;padding-left:clamp(1.4rem,3vw,3.5rem);border-left:2px solid #f46d22}
-.chapter.chapter-with-media:nth-of-type(even)>.chapter-visual{grid-column:2;grid-row:1}
-.chapter.chapter-with-media:nth-of-type(even)>.chapter-copy{grid-column:1;grid-row:1}
+/* Each media chapter has two independent flex columns. Explicit side classes avoid
+   the alternating grid placements used by ordinary story chapters. */
+.chapter.chapter-with-media{display:flex;align-items:flex-start;gap:clamp(2.5rem,5vw,6rem)}
+.chapter.chapter-with-media>.chapter-visual,
+.chapter.chapter-with-media>.chapter-copy{flex:1 1 0;min-width:0;grid-column:auto;grid-row:auto}
+.chapter.chapter-with-media>.chapter-visual{padding:0;border:0;position:sticky;top:125px}
+.chapter.chapter-with-media>.chapter-copy{align-self:flex-start;padding-left:clamp(1.4rem,3vw,3.5rem);border-left:2px solid #f46d22}
+.chapter.chapter-with-media.media-right>.chapter-visual{order:2;flex:0 1 41%}
+.chapter.chapter-with-media.media-right>.chapter-copy{order:1;flex:1 1 0}
+.chapter.chapter-with-media.media-left>.chapter-visual{order:1;flex:0 1 41%}
+.chapter.chapter-with-media.media-left>.chapter-copy{order:2;flex:1 1 0}
 .chapter.chapter-with-media h2{position:relative;top:auto;margin:0 0 2rem}
-.chapter.chapter-with-media .story-figure{margin:0}.chapter.chapter-with-media .story-figure img{width:100%;height:auto}
-.motion .chapter.chapter-with-media .chapter-visual,.motion .chapter.chapter-with-media .chapter-copy{opacity:.42;transform:translateY(24px);transition:opacity .8s,transform .8s}
-.motion .chapter.chapter-with-media.is-active .chapter-visual,.motion .chapter.chapter-with-media.is-active .chapter-copy{opacity:1;transform:none}
-@media(max-width:980px){.chapter.chapter-with-media,.chapter.chapter-with-media:nth-of-type(even){display:block}.chapter.chapter-with-media>.chapter-visual,.chapter.chapter-with-media:nth-of-type(even)>.chapter-visual{position:relative;top:auto;margin-bottom:2rem}.chapter.chapter-with-media>.chapter-copy,.chapter.chapter-with-media:nth-of-type(even)>.chapter-copy{padding-left:clamp(1.25rem,3vw,2rem)}.chapter.chapter-with-media h2{margin-bottom:1.5rem}.motion .chapter.chapter-with-media .chapter-visual,.motion .chapter.chapter-with-media .chapter-copy{opacity:1;transform:none}}
-@media(prefers-reduced-motion:reduce){.motion .chapter.chapter-with-media .chapter-visual,.motion .chapter.chapter-with-media .chapter-copy{opacity:1;transform:none}}
+.chapter.chapter-with-media .story-figure{margin:0}
+.chapter.chapter-with-media .story-figure img{width:100%;height:auto}
+.motion .chapter.chapter-with-media .chapter-visual,
+.motion .chapter.chapter-with-media .chapter-copy{opacity:.42;transform:translateY(24px);transition:opacity .8s,transform .8s}
+.motion .chapter.chapter-with-media.is-active .chapter-visual,
+.motion .chapter.chapter-with-media.is-active .chapter-copy{opacity:1;transform:none}
+@media(max-width:980px){
+ .chapter.chapter-with-media{flex-direction:column;gap:2rem}
+ .chapter.chapter-with-media>.chapter-visual,
+ .chapter.chapter-with-media>.chapter-copy{width:100%;flex:none}
+ .chapter.chapter-with-media.media-right>.chapter-visual,
+ .chapter.chapter-with-media.media-left>.chapter-visual{order:1}
+ .chapter.chapter-with-media.media-right>.chapter-copy,
+ .chapter.chapter-with-media.media-left>.chapter-copy{order:2}
+ .chapter.chapter-with-media>.chapter-visual{position:relative;top:auto}
+ .chapter.chapter-with-media>.chapter-copy{padding-left:clamp(1.25rem,3vw,2rem)}
+ .chapter.chapter-with-media h2{margin-bottom:1.5rem}
+ .motion .chapter.chapter-with-media .chapter-visual,
+ .motion .chapter.chapter-with-media .chapter-copy{opacity:1;transform:none}
+}
+@media(prefers-reduced-motion:reduce){
+ .motion .chapter.chapter-with-media .chapter-visual,
+ .motion .chapter.chapter-with-media .chapter-copy{opacity:1;transform:none}
+}
