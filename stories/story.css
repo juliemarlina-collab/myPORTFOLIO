@@ -23,3 +23,4 @@ body{counter-reset:chapter}.top{position:sticky;top:0;z-index:10;background:#111
 @media(max-width:700px){.evidence-links{grid-template-columns:1fr}.process-line span:not(:last-child):after{display:none}}
 .document-links{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.7rem}.document-links a{display:inline-block;color:#f46d22;border-bottom:1px solid currentColor;padding-bottom:.35rem;font-size:.82rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}.document-links a:hover{color:#ffab70}
 .story-figure{margin:2.2rem 0}.story-figure img{display:block;width:100%;height:auto;border:1px solid #ffffff45}.story-figure figcaption{color:#bdb5ac;font-size:.82rem;line-height:1.5;margin-top:.7rem}
+.text-evidence-link{color:#f46d22;border-bottom:1px solid currentColor;padding-bottom:.35rem;font-size:.86rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.text-evidence-link:hover{color:#ffab70}
