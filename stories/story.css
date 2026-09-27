@@ -70,3 +70,5 @@ body{counter-reset:chapter}.top{position:sticky;top:0;z-index:10;background:#111
  .motion .chapter.chapter-with-media .chapter-visual,
  .motion .chapter.chapter-with-media .chapter-copy{opacity:1;transform:none}
 }
+
+.language-link{border:1px solid #f46d22;border-radius:22px;padding:.5rem .7rem;color:#f46d22;font-weight:800}.nav .language-link{display:inline-block!important}@media(max-width:750px){.nav .language-link{display:inline-block}}
